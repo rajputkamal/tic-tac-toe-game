@@ -62,7 +62,7 @@ const Game = () => {
   const Cell = ({num}) => {
     return (
       <td
-        className="border-solid border-2 border-red-400 w-24 h-24 bg-red-100
+        className="shadow-lg flex justify-center items-center rounded-lg border-solid border-2 border-red-400 w-24 h-24 bg-red-50
          hover:bg-red-200 cursor-pointer font-medium text-gray-500 text-2xl text-center"
         onClick={() => clickHandler(num)}
       >
@@ -74,33 +74,25 @@ const Game = () => {
   return (
     <div>
         <div>
-        <h3 className="font-medium text-gray-500 text-2xl mb-2">The next player is:  {turn}</h3>
+        <h3 className="font-medium text-gray-500 text-2xl mb-2 text-centers">The next player is:  {turn}</h3>
         </div>
-      <table>
-         
-        <tbody>
-          <tr>
-            <Cell num={0} />
-            <Cell num={1} />
-            <Cell num={2} />
-          </tr>
-          <tr>
-            <Cell num={3} />
-            <Cell num={4} />
-            <Cell num={5} />
-          </tr>
-          <tr>
-            <Cell num={6} />
-            <Cell num={7} />
-            <Cell num={8} />
-          </tr>
-        </tbody>
 
-      </table>
+          <div className="grid grid-cols-3 gap-3">
+            <div><Cell num={0} /></div>
+            <div><Cell num={1} /></div>
+            <div><Cell num={2} /></div>
+            <div><Cell num={3} /></div>
+            <div><Cell num={4} /></div>
+            <div><Cell num={5} /></div>
+            <div><Cell num={6} /></div>
+            <div><Cell num={7} /></div>
+            <div><Cell num={8} /></div>
+          </div>
+
 
       {winner && <p className="font-medium text-gray-500 text-2xl">
           The winner is:  {winner}</p>}
-          <button onClick={() => restartGame()} className="border-solid border-2 border-red-400 p-1 
+          <button onClick={() => restartGame()} className="block mx-auto my-7 border-solid border-2 border-red-400 p-3
           rounded-xl bg-red-100 text-gray-500 text-base hover:bg-red-200 mt-2">Restart game!</button>
     </div>
 
